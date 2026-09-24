@@ -1,0 +1,318 @@
+:root {
+  --ink: #10243b;
+  --ink-deep: #071421;
+  --ink-soft: #526276;
+  --paper: #fbfaf7;
+  --paper-soft: #f2f4ee;
+  --rail: #0b1d2f;
+  --rail-soft: #132d43;
+  --aqua: #3de4d0;
+  --aqua-dark: #00756e;
+  --lime: #c7f464;
+  --coral: #ff836e;
+  --coral-ink: #b9413a;
+  --line: #dce3df;
+  --radius-card: 18px;
+  --shadow-page: 0 34px 90px rgba(2, 12, 23, .28);
+  --mobile-gutter: clamp(22px, 7vw, 56px);
+  --mobile-section-start: 42px;
+  --mobile-section-end: 52px;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--ink-deep); }
+
+body {
+  margin: 0;
+  padding: 52px 24px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(61, 228, 208, .18), transparent 28rem),
+    radial-gradient(circle at 92% 88%, rgba(199, 244, 100, .12), transparent 34rem),
+    var(--ink-deep);
+  color: var(--ink);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.print-button {
+  position: fixed; z-index: 5; top: 18px; right: 22px;
+  border: 1px solid rgba(255,255,255,.15); border-radius: 999px;
+  padding: 10px 16px; color: #fff; background: rgba(11,29,47,.86);
+  font: 700 12px/1 "Avenir Next", sans-serif; letter-spacing: .02em;
+  backdrop-filter: blur(14px); cursor: pointer; box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+
+.print-button:hover { color: var(--ink-deep); background: var(--aqua); }
+.print-button:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
+
+.resume {
+  display: grid; grid-template-columns: minmax(0, 1fr) 2.25in;
+  width: min(100%, 8.5in); min-height: 11in; margin: 0 auto;
+  overflow: hidden; border-radius: 26px; background: var(--paper);
+  box-shadow: var(--shadow-page);
+}
+
+.resume-main { min-width: 0; padding: .58in .48in .5in .58in; }
+
+.hero { position: relative; padding-bottom: 25px; }
+
+.eyebrow {
+  display: inline-flex; margin: 0 0 16px; padding: 7px 11px;
+  border-radius: 999px; color: var(--aqua-dark); background: rgba(61,228,208,.12);
+  font: 800 9px/1 "Avenir Next", sans-serif; letter-spacing: .15em; text-transform: uppercase;
+}
+
+h1 {
+  margin: 0; color: var(--ink-deep); font: 800 43px/.92 "Avenir Next", sans-serif;
+  letter-spacing: -.065em; text-transform: uppercase;
+}
+
+h1 span { color: var(--aqua-dark); }
+
+.hero-statement {
+  margin: 15px 0 0; max-width: 420px; color: var(--ink-soft);
+  font: 600 15px/1.3 "Avenir Next", sans-serif; letter-spacing: -.02em;
+}
+
+.hero-statement strong { color: var(--ink-deep); font-weight: 800; }
+
+.hero-rule { display: flex; width: 100%; height: 4px; margin-top: 21px; background: var(--line); }
+.hero-rule span { width: 24%; background: linear-gradient(90deg, var(--aqua-dark), var(--aqua)); }
+
+.proof-strip {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px;
+  margin: 13px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--line);
+}
+
+.proof-strip div { min-width: 0; padding: 9px 8px 8px; background: rgba(255,255,255,.82); }
+.proof-strip dt { color: var(--ink-deep); font: 800 9px/1 "Avenir Next", sans-serif; letter-spacing: -.02em; }
+.proof-strip dd { margin: 4px 0 0; color: var(--ink-soft); font-size: 6.5px; line-height: 1.25; }
+
+.classified-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 70px; padding: 4px 7px; border: 1px solid var(--ink-deep); border-radius: 3px;
+  color: #fff; background: repeating-linear-gradient(-12deg, #071421 0, #071421 7px, #14283d 7px, #14283d 9px);
+  box-shadow: 2px 2px 0 rgba(185,65,58,.28);
+  font: 800 7px/1 ui-monospace, "SFMono-Regular", Consolas, monospace;
+  letter-spacing: .14em; text-transform: uppercase; white-space: nowrap;
+}
+
+.proof-strip .classified-mark { min-width: 0; padding: 3px 5px; font-size: 6px; letter-spacing: .09em; }
+.classified-mark-inline { min-width: 0; padding: 2px 5px; vertical-align: .08em; font-size: .72em; letter-spacing: .09em; }
+
+.section { margin-top: 24px; }
+
+.section-heading { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.section-number { color: var(--coral-ink); font: 800 9px/1 "Avenir Next", sans-serif; letter-spacing: .12em; }
+.section-heading h2 { margin: 0; color: var(--ink-deep); font: 800 16px/1 "Avenir Next", sans-serif; letter-spacing: -.03em; }
+.heading-note { margin-left: auto; color: #5f6e7d; font: 700 8px/1 "Avenir Next", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+
+.summary {
+  position: relative; padding: 18px 19px 17px; overflow: hidden;
+  border: 1px solid #dfe8e3; border-radius: var(--radius-card);
+  background: linear-gradient(135deg, #f3f8f3 0%, #f8f7f1 100%);
+}
+
+.summary::after {
+  content: ""; position: absolute; width: 90px; height: 90px; right: -42px; bottom: -48px;
+  border: 18px solid rgba(61,228,208,.17); border-radius: 50%;
+}
+
+.summary .section-heading { margin-bottom: 10px; }
+.summary p { position: relative; z-index: 1; margin: 0; color: var(--ink-soft); font-size: 10.4px; line-height: 1.5; }
+.summary .summary-lead { margin-bottom: 7px; color: var(--ink); font-size: 11.2px; }
+.summary .summary-edge { margin-top: 9px; padding-top: 8px; border-top: 1px solid #d9e4df; color: var(--ink); font-size: 9.3px; }
+.summary strong { color: var(--aqua-dark); }
+
+.timeline { margin-left: 5px; padding-left: 19px; border-left: 1px solid #cad6d2; }
+.job { position: relative; padding: 1px 0 15px; break-inside: avoid; }
+.job:last-child { padding-bottom: 6px; }
+
+.job-marker {
+  position: absolute; top: 5px; left: -25px; width: 11px; height: 11px;
+  border: 3px solid var(--paper); border-radius: 50%; background: var(--aqua-dark);
+  box-shadow: 0 0 0 1px var(--aqua-dark);
+}
+
+.job-featured {
+  margin: 0 0 16px -10px; padding: 15px 15px 13px;
+  border: 1px solid #d7e8e1; border-radius: 15px;
+  background: linear-gradient(145deg, rgba(61,228,208,.09), rgba(255,255,255,.35));
+}
+
+.job-featured .job-marker { top: 19px; left: -16px; background: var(--coral-ink); box-shadow: 0 0 0 1px var(--coral-ink); }
+.job-topline { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
+.job h3 { margin: 0; color: var(--ink-deep); font: 800 11.8px/1.15 "Avenir Next", sans-serif; letter-spacing: -.02em; }
+.company { margin: 3px 0 0; color: var(--aqua-dark); font-size: 9.5px; font-weight: 700; }
+.company span { color: #7b8791; font-weight: 500; }
+.job time { flex: 0 0 auto; color: #5f6e7d; font: 700 8px/1.3 "Avenir Next", sans-serif; letter-spacing: .02em; }
+.job ul { margin: 8px 0 0 13px; padding: 0; }
+.job li { margin: 0 0 4px; padding-left: 2px; color: #4a5968; font-size: 9.2px; line-height: 1.4; }
+.job li::marker { color: var(--aqua-dark); }
+.job li strong { color: var(--ink); }
+
+.earlier-career { margin-top: 16px; break-inside: avoid; }
+.earlier-career > h3 { margin: 0 0 9px; color: #5f6e7d; font: 800 8.5px/1 "Avenir Next", sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.early-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.early-role { min-width: 0; padding: 10px 11px; border: 1px solid var(--line); border-radius: 11px; background: rgba(255,255,255,.56); }
+.early-role time { color: var(--coral-ink); font: 800 7.5px/1 "Avenir Next", sans-serif; letter-spacing: .08em; }
+.early-role h4 { margin: 5px 0 4px; color: var(--ink); font: 800 9.2px/1.25 "Avenir Next", sans-serif; }
+.early-role p { margin: 0; color: var(--ink-soft); font-size: 8.4px; line-height: 1.35; }
+
+.resume-rail {
+  position: relative; min-width: 0; overflow: hidden; padding: .48in .27in .4in;
+  color: #f5fbfa; background:
+    linear-gradient(180deg, rgba(61,228,208,.06), transparent 23%),
+    linear-gradient(155deg, var(--rail-soft), var(--rail) 48%, #071522);
+}
+
+.resume-rail::before {
+  content: ""; position: absolute; inset: 0 auto 0 0; width: 5px;
+  background: linear-gradient(180deg, var(--aqua), var(--lime) 48%, var(--coral));
+}
+
+.rail-orbit {
+  position: absolute; top: -74px; right: -72px; width: 192px; height: 192px;
+  border: 1px solid rgba(61,228,208,.18); border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(61,228,208,.025), 0 0 0 46px rgba(61,228,208,.02);
+}
+
+.monogram {
+  position: relative; display: grid; place-items: center; width: 48px; height: 48px;
+  margin-bottom: 27px; border: 1px solid rgba(255,255,255,.16); border-radius: 15px;
+  color: var(--ink-deep); background: var(--aqua);
+  font: 800 16px/1 "Avenir Next", sans-serif; letter-spacing: -.05em;
+  box-shadow: 0 10px 28px rgba(61,228,208,.18); transform: rotate(-3deg);
+}
+
+.rail-section { position: relative; margin-top: 23px; }
+.rail-kicker { margin: 0 0 10px; color: var(--aqua); font: 800 8.5px/1 "Avenir Next", sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+.contact { margin-top: 0; }
+.contact address { font-style: normal; }
+.contact span, .contact a { display: block; color: rgba(244,251,250,.72); font-size: 9px; line-height: 1.45; overflow-wrap: anywhere; }
+.contact a { color: #fff; text-decoration-color: rgba(61,228,208,.45); text-underline-offset: 3px; }
+.contact a:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+
+.rail-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.rail-heading > span { color: rgba(255,255,255,.58); font-size: 7px; text-transform: uppercase; letter-spacing: .06em; }
+
+.skill-groups { display: grid; gap: 8px; }
+.skill-group { padding: 10px; border: 1px solid rgba(255,255,255,.09); border-radius: 11px; background: rgba(255,255,255,.035); break-inside: avoid; }
+.skill-group-primary { border-color: rgba(199,244,100,.2); background: linear-gradient(135deg, rgba(199,244,100,.08), rgba(61,228,208,.035)); }
+.skill-group-adjacent { border-color: rgba(255,131,110,.2); background: linear-gradient(135deg, rgba(255,131,110,.08), rgba(255,255,255,.025)); }
+.skill-group h3 { margin: 0 0 7px; color: #fff; font: 800 8.5px/1.2 "Avenir Next", sans-serif; }
+.skill-group ul { display: flex; flex-wrap: wrap; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.skill-group li { padding: 4px 6px; border: 1px solid rgba(255,255,255,.1); border-radius: 6px; color: rgba(255,255,255,.8); background: rgba(255,255,255,.045); font-size: 6.8px; line-height: 1; }
+
+.language-list { display: grid; gap: 8px; margin: 0; }
+.language-list > div { display: grid; gap: 2px; }
+.language-list dt { color: #fff; font-size: 8px; font-weight: 700; }
+.language-list dd { margin: 0; color: rgba(255,255,255,.67); font-size: 7.3px; line-height: 1.35; }
+
+.education article { margin-bottom: 12px; }
+.education article > span { color: var(--coral); font: 700 7px/1 "Avenir Next", sans-serif; letter-spacing: .08em; }
+.education h3 { margin: 4px 0 3px; color: #fff; font: 700 8.5px/1.3 "Avenir Next", sans-serif; }
+.education article p { margin: 0; color: rgba(255,255,255,.66); font-size: 7.5px; line-height: 1.4; }
+.credential-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.credential-list li { padding-left: 8px; border-left: 2px solid rgba(61,228,208,.35); break-inside: avoid; }
+.credential-list strong, .credential-list span { display: block; }
+.credential-list strong { color: #fff; font-size: 7.6px; line-height: 1.3; }
+.credential-list span { margin-top: 2px; color: rgba(255,255,255,.58); font-size: 6.8px; line-height: 1.25; }
+
+.rail-signoff { position: relative; margin: 28px 0 0; color: rgba(255,255,255,.6); font: 600 12px/1.25 "Avenir Next", sans-serif; letter-spacing: -.03em; }
+.rail-signoff strong { color: var(--lime); font-weight: 800; }
+
+@media screen and (max-width: 760px) {
+  body { padding: 0; background: var(--paper); }
+  .print-button { display: none; }
+  .resume { display: flex; flex-direction: column; width: 100%; border-radius: 0; box-shadow: none; }
+  .resume-main { display: contents; }
+  .hero { order: 0; padding: var(--mobile-section-start) var(--mobile-gutter) 25px; }
+  .proof-strip dt { font-size: 10.5px; }
+  .proof-strip dd { font-size: 7.5px; }
+  .summary { order: 1; margin: 0 var(--mobile-gutter); }
+  .summary p { font-size: 11.5px; }
+  .summary .summary-lead { font-size: 12.4px; }
+  .summary .summary-edge { font-size: 10.5px; }
+  .delivery-section,
+  .experience-section,
+  .impact-section,
+  .resume-rail { padding-top: var(--mobile-section-start); }
+  .section-heading { align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+  .section-number { padding-top: 3px; }
+  .heading-note { padding-top: 2px; line-height: 1.25; }
+  .resume-rail { padding-right: var(--mobile-gutter); padding-bottom: var(--mobile-section-end); padding-left: var(--mobile-gutter); }
+  .experience-section { order: 3; margin: 0; padding-right: var(--mobile-gutter); padding-bottom: 0; padding-left: var(--mobile-gutter); }
+  .resume-rail { order: 4; }
+  .rail-kicker { font-size: 10px; }
+  .contact span, .contact a { font-size: 11px; }
+  .rail-heading > span { font-size: 8px; }
+  .skill-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-group h3 { font-size: 11px; }
+  .skill-group li { font-size: 9px; }
+  .language-list dt { font-size: 10px; }
+  .language-list dd { font-size: 9px; }
+  .education article > span { font-size: 8px; }
+  .education h3 { font-size: 11px; }
+  .education article p { font-size: 9px; }
+  .credential-list { gap: 11px; }
+  .credential-list strong { font-size: 10px; }
+  .credential-list span { font-size: 8.5px; }
+  .rail-signoff { font-size: 18px; }
+  .job h3 { font-size: 13px; }
+  .company { font-size: 10.5px; }
+  .job time { font-size: 9px; }
+  .job li { font-size: 10.2px; }
+  .early-role time { font-size: 8.5px; }
+  .early-role h4 { font-size: 11px; }
+  .early-role p { font-size: 9.5px; }
+}
+
+@media screen and (max-width: 470px) {
+  h1 { font-size: 36px; }
+  .hero-statement { font-size: 13px; }
+  .proof-strip { grid-template-columns: 1fr 1fr; }
+  .proof-strip dt { font-size: 11px; }
+  .proof-strip dd { font-size: 8px; }
+  .job-topline { display: block; }
+  .job time { display: block; margin-top: 5px; }
+  .skill-groups { grid-template-columns: 1fr; }
+  .early-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .print-button { transition: color .18s ease, background .18s ease, transform .18s ease; }
+  .print-button:hover { transform: translateY(-2px); }
+}
+
+@media print {
+  @page { size: Letter; margin: 0; }
+  html, body { background: #fff; }
+  body { padding: 0; }
+  .print-button { display: none; }
+  .resume {
+    display: grid; grid-template-columns: minmax(0, 1fr) 2.25in;
+    width: 8.5in; min-height: 22in; margin: 0; border-radius: 0; box-shadow: none;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .resume-main { display: block; padding: .38in .48in .16in .58in; }
+  .resume { overflow: visible; }
+  .resume-rail { overflow: visible; padding-top: .38in; padding-bottom: .16in; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .rail-orbit { right: 0; }
+  .experience-section { margin-top: 6px; }
+  .job-featured + .job { break-before: page; padding-top: 1px; }
+  .job-featured + .job::before { content: ""; display: block; height: 22px; }
+  .job-featured + .job .job-marker { top: 27px; }
+  .skill-group, .education article { break-inside: avoid; }
+  .hero, .summary, .experience-section, .resume-rail { order: initial; }
+  a { color: inherit; }
+}
+
+@media (forced-colors: active) {
+  .resume, .resume-rail, .summary, .job-featured, .skill-group { border: 1px solid CanvasText; background: Canvas; color: CanvasText; }
+  .resume-rail *, .summary *, .job-featured * { color: CanvasText; }
+  .resume-rail::before, .hero-rule span { background: Highlight; }
+  .classified-mark { border-color: CanvasText; color: Canvas; background: CanvasText; box-shadow: none; }
+}
