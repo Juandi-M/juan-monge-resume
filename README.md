@@ -6,15 +6,15 @@
 
 One engineer. The whole system. I architect it, build it, secure it, and ship it.
 
-[Open the live HTML résumé](https://htmlpreview.github.io/?https://github.com/Juandi-M/juan-monge-resume/blob/main/index.html) · [Download the PDF](./Juan_Monge_Resume.pdf) · [LinkedIn](https://www.linkedin.com/in/juandimonge)
+[View the HTML source](./index.html) · [Download the PDF](./Juan_Monge_Resume.pdf) · [LinkedIn](https://www.linkedin.com/in/juandimonge)
 
 </div>
 
-<a href="https://htmlpreview.github.io/?https://github.com/Juandi-M/juan-monge-resume/blob/main/index.html">
+<a href="./index.html">
   <img src="./assets/resume-page-1.png" alt="Page one of Juan Monge's public redacted résumé" width="100%">
 </a>
 
-<a href="https://htmlpreview.github.io/?https://github.com/Juandi-M/juan-monge-resume/blob/main/index.html">
+<a href="./index.html">
   <img src="./assets/resume-page-2.png" alt="Page two of Juan Monge's public redacted résumé" width="100%">
 </a>
 
